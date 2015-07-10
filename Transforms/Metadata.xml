@@ -1,0 +1,25 @@
+<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+  <attr path="/api/package[@name='com.twitter.sdk.android.core.models']/class[@name='Coordinates']/field[@name='coordinates']" name="name">Coordinats</attr>
+  <attr path="/api/package[@name='com.twitter.sdk.android.core.internal']/class[@name='TwitterApiConstants.Errors']/field[@name='ERRORS']" name="name">Erros</attr>
+  <attr path="/api/package[@name='com.google.gson.internal.bind']/class[@name='TypeAdapters.EnumTypeAdapter']/method[@name='write' and count(parameter)=2 and parameter[1][@type='com.google.gson.stream.JsonWriter'] and parameter[2][@type='java.lang.Object']]" name="name">Writ</attr>
+  <attr path="/api/package[@name='com.twitter.sdk.android.core']/class[@name='TwitterCore']/method[@name='doInBackground' and count(parameter)=0]" name="name">DoInBackgroun</attr>
+
+  <attr path="/api/package[@name='io.fabric.sdk.android.services.concurrency']/class[@name='PriorityTask']/method[@name='getDependencies' and count(parameter)=0]" name="name">Dependencis</attr>
+  <attr path="/api/package[@name='io.fabric.sdk.android.services.concurrency']/class[@name='PriorityAsyncTask']/method[@name='getDependencies' and count(parameter)=0]" name="name">Dependencis</attr>
+  <attr path="/api/package[@name='io.fabric.sdk.android.services.concurrency']/class[@name='PriorityFutureTask']/method[@name='getDependencies' and count(parameter)=0]" name="name">Dependencis</attr>
+
+  <attr path="/api/package[@name='com.twitter.sdk.android.core.models']/class[@name='Entity']" name="visibility">public</attr>
+  <attr path="/api/package[@name='com.twitter.sdk.android.core.internal.oauth']/class[@name='OAuthService']" name="visibility">public</attr>
+  <attr path="/api/package[@name='io.fabric.sdk.android.services.settings']/class[@name='AbstractAppSpiCall']" name="visibility">public</attr>
+  <attr path="/api/package[@name='io.fabric.sdk.android.services.settings']/class[@name='AppIconSettingsData']" name="visibility">public</attr>
+  <attr path="/api/package[@name='io.fabric.sdk.android.services.settings']/interface[@name='IAppSpiCall']" name="visibility">public</attr>
+  <attr path="/api/package[@name='io.fabric.sdk.android.services.settings']/class[@name='AbstractAppSpiCall']" name="visibility">public</attr>
+
+</metadata>
