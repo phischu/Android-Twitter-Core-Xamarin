@@ -13,6 +13,8 @@ Do not use these bindings directly. They are really quick and really dirty. If y
 - File -> Add -> Existing Project -> Choose this .csproj file.
 - Add a reference in your android project.
 
+Xamarin Android has to use a jdk with at least version 1.7.
+
 ### How we got here
 
 The main reference is [this guide](http://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/binding_a_java_library_(.jar)/). 
