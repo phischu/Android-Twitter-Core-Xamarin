@@ -48,22 +48,19 @@ It was helpful that [twitter-kit-android](https://github.com/twitter/twitter-kit
 
 Twitter core for android needs [resources](https://github.com/twitter/twitter-kit-android/tree/master/twitter-core/src/main/res). They are present in the jar in a `res` folder. When building an android `apk` the build tool usually [generates and compiles](http://spin.atomicobject.com/2011/08/22/building-android-application-bundles-apks-by-hand/) an `R.java` file and also puts it into the jar. Unfourtunately `twitter-core-1.4.0.jar` was missing `R.class` and several related classes like `R$layout.class`. It did feature an `R.txt` with the same information as `R.java` would have, probably for [other build tools](http://buckbuild.com/rule/android_resource.html).
 
-We ussed `aapt` to generate `R.java` by hand. Exact command lost but something like:
+What we had to do is add twitter-corre-1.4.0 as a library project that includes its resources. We created an archive `twitter-core-1.4.0.zip` with the following structure:
 
-    aapt p -m -J gen/ -M ./AndroidManifest.xml -S res/ -I android.jar
+    twitter-core-1.4.0.zip
+    |_bin
+      |_classes.jar
+      |_AndroidMainfest.xml
+    |_res
+      |_layout
+        |_ ...
+      |_drawable
+        |_ ...
+      |_ ...
 
-The result is generated in the `gen/` folder.
+The `res` folder and `AndroidManifest.xml` are from the original `twitter-core-1.4.0.aar`. `classes.jar` is the original twitter core `classes.jar`.
 
-    cd gen
-
-We used `javac` to compile it to `.class` files:
-
-    javac com/twitter/sdk/android/core/R.java
-
-We used the `jar` tool to add those to `twitter-core-1.4.0.jar`:
-
-    jar uf twitter-core-1.4.0.jar com/twitter/sdk/android/core/*
-
-We replaced our original `twitter-core-1.4.0.jar` with this one.
-
-We had to include the resource files themselves. We zipped the `res` folder (called `res.zip`), added it to the project and set its build action to `LibraryProjectZip`. Luckily this worked.
+In Visual Studio we chose `LibraryProjectZip` as build action for `twitter-core-1.4.0.zip`.
